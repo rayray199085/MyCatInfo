@@ -1,0 +1,59 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - AnimatedCollectionViewLayout (0.6.0)
+  - DLSlideView (0.8.3)
+  - pop (1.0.12)
+  - SCTableIndex (0.3.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SKPhotoBrowser (6.1.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireNetworkActivityIndicator
+  - AnimatedCollectionViewLayout
+  - DLSlideView (from `https://github.com/agdsdl/DLSlideView.git`)
+  - pop
+  - SCTableIndex
+  - SDWebImage
+  - SKPhotoBrowser
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - AnimatedCollectionViewLayout
+    - pop
+    - SCTableIndex
+    - SDWebImage
+    - SKPhotoBrowser
+    - SVProgressHUD
+
+EXTERNAL SOURCES:
+  DLSlideView:
+    :git: https://github.com/agdsdl/DLSlideView.git
+
+CHECKOUT OPTIONS:
+  DLSlideView:
+    :commit: fc5f4f0be8b3c8849506ecb0e5282f6784c5f26e
+    :git: https://github.com/agdsdl/DLSlideView.git
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
+  DLSlideView: b517599cf60b1de71cb1b1e0bb356a893669c005
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SCTableIndex: db2a0917f5df1d63dfa2b02bb232426da414a66d
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 94c3139d5590ebe9e88a4b8764fcc51d800006b8
+
+COCOAPODS: 1.6.1
