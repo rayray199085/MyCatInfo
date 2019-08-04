@@ -17,7 +17,7 @@ extension UIImage{
     ///   - size: imageView.bounds.size
     ///   - backgroundColor: parent view color, default is white
     /// - Returns: an image with new size
-    func modifyImageSize(newSize:CGSize?, cornerRadius: CGFloat) -> UIImage? {
+    func modifyImageSize(newSize:CGSize?, cornerRadius: CGFloat = 0) -> UIImage? {
         guard let newSize = newSize else{
             return nil
         }

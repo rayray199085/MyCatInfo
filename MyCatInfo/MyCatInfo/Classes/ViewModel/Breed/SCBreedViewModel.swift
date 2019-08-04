@@ -17,8 +17,11 @@ struct SCBreedViewModel {
     var displayCellHeight: CGFloat?
     var countryEmojiString: String?
     var temperament: String?
+    var isFavourite = false
+    var row: Int?
+    var breedId: String?
     
-    init(breedData: SCBreedData) {
+    init(breedData: SCBreedData, favouriteStatus: Bool, index: Int) {
         let breed = breedData.breeds?[0]
         breedName = breed?.name
         breedDescription = breed?.description
@@ -29,10 +32,16 @@ struct SCBreedViewModel {
         temperament = breed?.temperament
         displayCellHeight = getDisplayViewCellHeight()
         countryEmojiString = breed?.country_code?.convertCountryCode2EmojiFlag()
-        
+        isFavourite = favouriteStatus
+        row = index
+        breedId = breed?.id
     }
 }
 extension SCBreedViewModel{
+    mutating func updateFavouriteStatus(newStatus: Bool){
+        isFavourite = newStatus
+    }
+    
     func getDisplayViewCellHeight()->CGFloat{
         let margin: CGFloat = 3
         let separatorHeight: CGFloat = 1
