@@ -24,9 +24,9 @@ private extension SCBreedViewController{
     func setupUI(){
         view.addSubview(displayView)
         displayView.delegate = self
-        
         SKPhotoBrowserOptions.backgroundColor = InfoCommon.barColor
     }
+    
     func loadData(){
         SVProgressHUD.show()
         listViewModel.loadBreedData { [weak self](isSuccess) in
@@ -39,8 +39,10 @@ extension SCBreedViewController: SCBreedDisplayViewDelegate{
     func didSelectedCell(view: SCBreedDisplayView, index: Int) {
         let vc = SCBreedDetailsController()
         vc.viewModel = listViewModel.viewModels?[index]
+        vc.breedNames = listViewModel.breedNames
         vc.title = listViewModel.viewModels?[index].breedName
         navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
     }
     
     func didTapCellImageView(view: SCBreedDisplayView, urlString: String?) {
@@ -61,5 +63,10 @@ extension SCBreedViewController: SCBreedDisplayViewDelegate{
             browser.initializePageIndex(0)
             self.present(browser, animated: true, completion: {})
         }
+    }
+}
+extension SCBreedViewController: SCBreedDetailsControllerDelegate{
+    func didSelectedComparisonCell(view: SCBreedDetailsController, index: Int, complete: (SCBreedViewModel?) -> ()) {
+        complete(listViewModel.viewModels?[index])
     }
 }

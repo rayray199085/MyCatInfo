@@ -20,6 +20,7 @@ struct SCBreedViewModel {
     var isFavourite = false
     var row: Int?
     var breedId: String?
+    var features: [Int]?
     
     init(breedData: SCBreedData, favouriteStatus: Bool, index: Int) {
         let breed = breedData.breeds?[0]
@@ -35,9 +36,40 @@ struct SCBreedViewModel {
         isFavourite = favouriteStatus
         row = index
         breedId = breed?.id
+        features = loadFeatures(breed: breed)
     }
 }
 extension SCBreedViewModel{
+    func loadFeatures(breed: SCBreedDataItem?)->[Int]{
+        guard let breed = breed else{
+            return []
+        }
+        
+        var features = [Int]()
+        features.append(breed.natural ?? 0)
+        features.append(breed.vocalisation ?? 0)
+        features.append(breed.suppressed_tail ?? 0)
+        features.append(breed.stranger_friendly ?? 0)
+        features.append(breed.social_needs ?? 0)
+        features.append(breed.short_legs ?? 0)
+        features.append(breed.shedding_level ?? 0)
+        features.append(breed.rex ?? 0)
+        features.append(breed.rare ?? 0)
+        features.append(breed.lap ?? 0)
+        features.append(breed.intelligence ?? 0)
+        features.append(breed.indoor ?? 0)
+        features.append(breed.hypoallergenic ?? 0)
+        features.append(breed.health_issues ?? 0)
+        features.append(breed.hairless ?? 0)
+        features.append(breed.grooming ?? 0)
+        features.append(breed.experimental ?? 0)
+        features.append(breed.energy_level ?? 0)
+        features.append(breed.dog_friendly ?? 0)
+        features.append(breed.child_friendly ?? 0)
+        features.append(breed.affection_level ?? 0)
+        features.append(breed.adaptability ?? 0)
+        return features
+    }
     mutating func updateFavouriteStatus(newStatus: Bool){
         isFavourite = newStatus
     }

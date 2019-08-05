@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SCBreedComparisonView" customModule="MyCatInfo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IV-0a-N9Z">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lyo-7E-2j1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmW-Fm-sTX">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <connections>
+                        <action selector="clickComparisonMaskButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="zi9-pw-fW9"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sB1-XY-oRo">
+                    <rect key="frame" x="5" y="178.5" width="404" height="539"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="sB1-XY-oRo" secondAttribute="height" multiplier="3:4" id="D56-VX-98c"/>
+                    </constraints>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sB1-XY-oRo" secondAttribute="trailing" constant="5" id="4Vv-uD-0Ul"/>
+                <constraint firstItem="CmW-Fm-sTX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6ud-rO-9Mr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4IV-0a-N9Z" secondAttribute="trailing" id="90O-c4-eyW"/>
+                <constraint firstItem="4IV-0a-N9Z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P5I-jF-TeP"/>
+                <constraint firstItem="CmW-Fm-sTX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R8x-lC-PBU"/>
+                <constraint firstItem="sB1-XY-oRo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eyB-vd-Pws"/>
+                <constraint firstItem="4IV-0a-N9Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mgv-SV-5bM"/>
+                <constraint firstAttribute="bottom" secondItem="CmW-Fm-sTX" secondAttribute="bottom" id="nlJ-hk-2r8"/>
+                <constraint firstAttribute="bottom" secondItem="4IV-0a-N9Z" secondAttribute="bottom" id="oof-3y-AgH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CmW-Fm-sTX" secondAttribute="trailing" id="wxx-dZ-qTj"/>
+                <constraint firstItem="sB1-XY-oRo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="xxr-tn-XO2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="tableView" destination="sB1-XY-oRo" id="Qrt-hV-zZs"/>
+            </connections>
+            <point key="canvasLocation" x="69.565217391304358" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>

@@ -9,8 +9,21 @@
 import UIKit
 import DLSlideView
 
+protocol SCBreedDetailsControllerDelegate: NSObjectProtocol {
+    func didSelectedComparisonCell(view: SCBreedDetailsController,index: Int, complete:(_ viewModel: SCBreedViewModel?)->())
+}
 class SCBreedDetailsController: UIViewController {
+    weak var delegate: SCBreedDetailsControllerDelegate?
+    
+    private lazy var comparisonView = SCBreedComparisonView.comparisonView()
+    var breedNames: [String]?
     var viewModel: SCBreedViewModel?
+    private lazy var comparisonButton: UIButton = {
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage(named: "comparison"), for: [])
+        btn.setBackgroundImage(UIImage(named: "comparison_highlighted"), for: .highlighted)
+        return btn
+    }()
     
     @IBOutlet weak var tabedSlideView: DLTabedSlideView!
     
@@ -22,11 +35,24 @@ class SCBreedDetailsController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    @objc private func clickComparisonButton(){
+        comparisonButton.isEnabled = false
+        comparisonView.showComparisonView {[weak self] in
+            self?.comparisonButton.isEnabled = true
+        }
+    }
 }
 private extension SCBreedDetailsController{
     func setupUI(){
         setupTabedSlideView()
-        
+        setupNavigationItem()
+        navigationController?.view.addSubview(comparisonView)
+        comparisonView.breedNames = breedNames
+        comparisonView.delegate = self
+    }
+    func setupNavigationItem(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: comparisonButton)
+        comparisonButton.addTarget(self, action: #selector(clickComparisonButton), for: .touchUpInside)
     }
     private func getTabs()->[DLTabedbarItem]{
         var tabs = [DLTabedbarItem]()
@@ -77,5 +103,18 @@ extension SCBreedDetailsController: DLTabedSlideViewDelegate{
         default:
             break
         }
+    }
+}
+extension SCBreedDetailsController: SCBreedComparisonViewDelegate{
+    func didDismissComparisonView(view: SCBreedComparisonView?) {
+        if tabedSlideView.selectedIndex != 0{
+            tabedSlideView.selectedIndex = 0
+        }
+    }
+    
+    func didSelectedCell(view: SCBreedComparisonView, index: Int) {
+        delegate?.didSelectedComparisonCell(view: self, index: index, complete: { [weak self](comparisonViewModel) in
+            self?.featureController.comparisonViewModel = comparisonViewModel
+        })
     }
 }

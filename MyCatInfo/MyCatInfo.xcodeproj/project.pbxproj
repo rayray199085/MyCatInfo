@@ -129,6 +129,10 @@
 		0DD1991E22F54A870078B320 /* SCBreedDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1991D22F54A870078B320 /* SCBreedDisplayView.xib */; };
 		0DD1992022F54AE70078B320 /* SCBreedDisplayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1991F22F54AE70078B320 /* SCBreedDisplayViewCell.swift */; };
 		0DD1992222F54B050078B320 /* SCBreedDisplayViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1992122F54B050078B320 /* SCBreedDisplayViewCell.xib */; };
+		0DDB807E22F8048E00FD8AA1 /* SCBreedComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB807D22F8048E00FD8AA1 /* SCBreedComparisonView.swift */; };
+		0DDB808022F8049900FD8AA1 /* SCBreedComparisonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB807F22F8049900FD8AA1 /* SCBreedComparisonView.xib */; };
+		0DDB808222F80ED100FD8AA1 /* SCBreedComparisonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB808122F80ED100FD8AA1 /* SCBreedComparisonCell.swift */; };
+		0DDB808422F80F2500FD8AA1 /* SCBreedComparisonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB808322F80F2500FD8AA1 /* SCBreedComparisonCell.xib */; };
 		0DF223B822F6623800E12353 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF223B422F6623800E12353 /* CoreDataManager.swift */; };
 		0DF223B922F6623800E12353 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DF223B522F6623800E12353 /* Model.xcdatamodeld */; };
 		0DF223BA22F6623800E12353 /* AppDelegate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF223B722F6623800E12353 /* AppDelegate+extension.swift */; };
@@ -277,6 +281,10 @@
 		0DD1991D22F54A870078B320 /* SCBreedDisplayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCBreedDisplayView.xib; sourceTree = "<group>"; };
 		0DD1991F22F54AE70078B320 /* SCBreedDisplayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBreedDisplayViewCell.swift; sourceTree = "<group>"; };
 		0DD1992122F54B050078B320 /* SCBreedDisplayViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCBreedDisplayViewCell.xib; sourceTree = "<group>"; };
+		0DDB807D22F8048E00FD8AA1 /* SCBreedComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBreedComparisonView.swift; sourceTree = "<group>"; };
+		0DDB807F22F8049900FD8AA1 /* SCBreedComparisonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCBreedComparisonView.xib; sourceTree = "<group>"; };
+		0DDB808122F80ED100FD8AA1 /* SCBreedComparisonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBreedComparisonCell.swift; sourceTree = "<group>"; };
+		0DDB808322F80F2500FD8AA1 /* SCBreedComparisonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCBreedComparisonCell.xib; sourceTree = "<group>"; };
 		0DF223B422F6623800E12353 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0DF223B622F6623800E12353 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0DF223B722F6623800E12353 /* AppDelegate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+extension.swift"; sourceTree = "<group>"; };
@@ -624,6 +632,17 @@
 			path = "Display View";
 			sourceTree = "<group>";
 		};
+		0DDB807C22F8046900FD8AA1 /* Comparison  */ = {
+			isa = PBXGroup;
+			children = (
+				0DDB807D22F8048E00FD8AA1 /* SCBreedComparisonView.swift */,
+				0DDB807F22F8049900FD8AA1 /* SCBreedComparisonView.xib */,
+				0DDB808122F80ED100FD8AA1 /* SCBreedComparisonCell.swift */,
+				0DDB808322F80F2500FD8AA1 /* SCBreedComparisonCell.xib */,
+			);
+			path = "Comparison ";
+			sourceTree = "<group>";
+		};
 		0DF223B322F6623800E12353 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +656,7 @@
 		0DF223BB22F6997600E12353 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				0DDB807C22F8046900FD8AA1 /* Comparison  */,
 				0DF223C422F6B1C200E12353 /* Feature */,
 				0DF223BC22F6999500E12353 /* SCBreedDetailsController.swift */,
 				0DF223BE22F69A0900E12353 /* SCBreedDetailsController.xib */,
@@ -774,6 +794,7 @@
 				0DD198E322F5409E0078B320 /* ctif.json in Resources */,
 				0DD1990822F5409E0078B320 /* nebe.json in Resources */,
 				0DD198E922F5409E0078B320 /* mcoo.json in Resources */,
+				0DDB808022F8049900FD8AA1 /* SCBreedComparisonView.xib in Resources */,
 				0DD198F422F5409E0078B320 /* snow.json in Resources */,
 				0DD1986D22F512440078B320 /* main.json in Resources */,
 				0DD198DF22F5409E0078B320 /* asho.json in Resources */,
@@ -798,6 +819,7 @@
 				0DD1991222F5409E0078B320 /* sibe.json in Resources */,
 				0DD198F622F5409E0078B320 /* rblu.json in Resources */,
 				0DD1990522F5409E0078B320 /* tonk.json in Resources */,
+				0DDB808422F80F2500FD8AA1 /* SCBreedComparisonCell.xib in Resources */,
 				0DD198F222F5409E0078B320 /* lihu.json in Resources */,
 				0DD1980922F50B790078B320 /* LaunchScreen.storyboard in Resources */,
 				0DD1980622F50B790078B320 /* Assets.xcassets in Resources */,
@@ -845,6 +867,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DLSlideView/DLSlideView.framework",
 				"${BUILT_PRODUCTS_DIR}/SCTableIndex/SCTableIndex.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -859,6 +882,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLSlideView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCTableIndex.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -879,6 +903,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD1986722F5107E0078B320 /* SCNetworkManager.swift in Sources */,
+				0DDB808222F80ED100FD8AA1 /* SCBreedComparisonCell.swift in Sources */,
 				0DD1985522F5107E0078B320 /* UIViewController+extension.swift in Sources */,
 				0DF223BA22F6623800E12353 /* AppDelegate+extension.swift in Sources */,
 				0DD1985A22F5107E0078B320 /* UIBarButtonItem+extension.swift in Sources */,
@@ -929,6 +954,7 @@
 				0DD1988022F513BA0078B320 /* SCMoreViewController.swift in Sources */,
 				0DD1984B22F5107E0078B320 /* UIFont+extension.swift in Sources */,
 				0DD1984A22F5107E0078B320 /* NSAttributedString+extension.swift in Sources */,
+				0DDB807E22F8048E00FD8AA1 /* SCBreedComparisonView.swift in Sources */,
 				0DD1987A22F513880078B320 /* SCFavouriteViewController.swift in Sources */,
 				0DD1984E22F5107E0078B320 /* UILabel+extension.swift in Sources */,
 				0DD1988A22F527700078B320 /* Data+extension.swift in Sources */,

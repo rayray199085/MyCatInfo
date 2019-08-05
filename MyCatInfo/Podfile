@@ -16,4 +16,5 @@ pod "SCTableIndex"
 pod 'SKPhotoBrowser'
 pod 'DLSlideView', :git => 'https://github.com/agdsdl/DLSlideView.git'
 pod 'AnimatedCollectionViewLayout'
+pod 'Charts'
 end
