@@ -21,8 +21,10 @@ struct SCBreedViewModel {
     var row: Int?
     var breedId: String?
     var features: [Int]?
+    var lifespan: String?
+    var wikiUrl: String?
     
-    init(breedData: SCBreedData, favouriteStatus: Bool, index: Int) {
+    init(breedData: SCBreedData, favouriteStatus: Bool, index: Int = 0) {
         let breed = breedData.breeds?[0]
         breedName = breed?.name
         breedDescription = breed?.description
@@ -37,6 +39,8 @@ struct SCBreedViewModel {
         row = index
         breedId = breed?.id
         features = loadFeatures(breed: breed)
+        lifespan = breed?.life_span
+        wikiUrl = breed?.wikipedia_url
     }
 }
 extension SCBreedViewModel{
@@ -78,10 +82,12 @@ extension SCBreedViewModel{
         let margin: CGFloat = 3
         let separatorHeight: CGFloat = 1
         let nameLabelHeight: CGFloat = 21
+        let lifespanLabelHeight: CGFloat = 16
         let viewWidth = UIScreen.screenWidth() - 2 * margin
         var height = margin
         height += nameLabelHeight
         height += margin + (temperament?.heightWithConstrainedWidth(width: viewWidth, font: UIFont.boldSystemFont(ofSize: 13)) ?? 0)
+        height += margin + lifespanLabelHeight
         height += margin + (breedDescription?.heightWithConstrainedWidth(width: viewWidth, font: UIFont.systemFont(ofSize: 15)) ?? 0)
         height += margin + (imageHeight ?? 0)
         height += margin + separatorHeight

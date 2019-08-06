@@ -13,26 +13,26 @@ class SCBreedFeatureController: UIViewController {
     private var currentDataSet: BarChartDataSet?
     @IBOutlet weak var barChart: HorizontalBarChartView!
     
-    var features = ["natural", "Vocalisation", "Suppressed Tail", "Stranger Friendly", "Social Needs", "Short Legs", "Shedding Level", "Rex", "Rare", "Lap", "Intelligence", "Indoor", "Hypoallergenic", "Health Issues", "Hairless", "Grooming", "Experimental", "Energy Level", "Dog Friendly", "Child Friendly", "Affection Level", "Adaptability"]
+    var features = ["Natural", "Vocalisation", "Suppressed Tail", "Stranger Friendly", "Social Needs", "Short Legs", "Shedding Level", "Rex", "Rare", "Lap", "Intelligence", "Indoor", "Hypoallergenic", "Health Issues", "Hairless", "Grooming", "Experimental", "Energy Level", "Dog Friendly", "Child Friendly", "Affection Level", "Adaptability"]
     
     var comparisonViewModel: SCBreedViewModel?{
         didSet{
-            let groupSpace = 0.2
+            let groupSpace = 0.1
             let barSpace = 0.0
-            let barWidth = 0.4
+            let barWidth = 0.45
             let groupCount = comparisonViewModel?.features?.count ?? 0
             
             let dataSet = getDataSet(viewModel: comparisonViewModel)
-            dataSet.colors = [.orange]
+            dataSet.colors = [InfoCommon.comparisonBarColor]
             guard let currentDataSet = currentDataSet else{
                 return
             }
             let chartData = BarChartData(dataSets: [currentDataSet, dataSet])
             chartData.barWidth = barWidth
-            chartData.groupBars(fromX: Double(0), groupSpace: groupSpace, barSpace: barSpace)
+            chartData.groupBars(fromX: 0.0, groupSpace: groupSpace, barSpace: barSpace)
             
-            barChart.xAxis.axisMinimum = Double(0)
-            barChart.xAxis.axisMaximum = Double(0) + chartData
+            barChart.xAxis.axisMinimum = 0.0
+            barChart.xAxis.axisMaximum = 0.0 + chartData
                 .groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(groupCount)
             barChart.xAxis.centerAxisLabelsEnabled = true
             barChart.animate(xAxisDuration: 1, easingOption: .easeInSine)
@@ -43,9 +43,6 @@ class SCBreedFeatureController: UIViewController {
     
     var viewModel: SCBreedViewModel?{
         didSet{
-            if currentDataSet != nil{
-                return
-            }
             setupChartView()
         }
     }
@@ -58,28 +55,42 @@ class SCBreedFeatureController: UIViewController {
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: features)
         barChart.xAxis.drawGridLinesEnabled = false
         barChart.rightAxis.enabled = false
-    
-        barChart.animate(xAxisDuration: 1, easingOption: .easeInSine)
-        barChart.isUserInteractionEnabled = false
-        barChart.leftAxis.axisMinimum = 0
+       
         barChart.rightAxis.axisMinimum = 0
-        barChart.drawBarShadowEnabled = true
-//        barChart.drawValueAboveBarEnabled = false
+        barChart.leftAxis.axisMinimum = 0
+        
+        barChart.isUserInteractionEnabled = false
         barChart.leftAxis.drawGridLinesEnabled = false
         barChart.leftAxis.labelTextColor = .darkGray
+        
+        barChart.drawBarShadowEnabled = true
+//        barChart.drawValueAboveBarEnabled = false
         barChart.scaleYEnabled = false
         barChart.doubleTapToZoomEnabled = false
         barChart.dragEnabled = false
         barChart.dragDecelerationEnabled = false
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapOnView))
+        recognizer.numberOfTapsRequired = 2
+        recognizer.numberOfTouchesRequired = 1
+        
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func didDoubleTapOnView(recognizer: UITapGestureRecognizer){
+        // reset group chart data settings
+        barChart.xAxis.resetCustomAxisMin()
+        barChart.xAxis.resetCustomAxisMax()
+        barChart.xAxis.centerAxisLabelsEnabled = false
+        setupChartView()
     }
 }
 private extension SCBreedFeatureController{
     func setupChartView(){
         currentDataSet = getDataSet(viewModel: viewModel)
-        currentDataSet?.colors = [InfoCommon.barColor]
-        let chartData = BarChartData(dataSets: [currentDataSet!])
-        
-        barChart.data = chartData
+        currentDataSet!.colors = [InfoCommon.barColor]
+        barChart.data = BarChartData(dataSets: [currentDataSet!])
+        barChart.animate(xAxisDuration: 1, easingOption: .easeInSine)
     }
     
     func getDataSet(viewModel: SCBreedViewModel?)->BarChartDataSet{

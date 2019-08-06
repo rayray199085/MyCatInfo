@@ -15,14 +15,15 @@ protocol SCBreedComparisonViewDelegate: NSObjectProtocol {
 private let reuseIdentifier = "comparison_cell"
 class SCBreedComparisonView: UIView {
     weak var delegate: SCBreedComparisonViewDelegate?
-    
-    var breedNames: [String]?
+    private var preSelectedIndex = -1
+    private var breedNames: [String]?
     
     @IBOutlet weak var tableView: UITableView!
-    class func comparisonView()->SCBreedComparisonView{
+    class func comparisonView(names: [String]?)->SCBreedComparisonView{
         let nib = UINib(nibName: "SCBreedComparisonView", bundle: nil)
         let v = nib.instantiate(withOwner: self, options: nil)[0] as! SCBreedComparisonView
         v.frame = UIScreen.main.bounds
+        v.breedNames = names
         v.alpha = 0
         return v
     }
@@ -37,9 +38,16 @@ class SCBreedComparisonView: UIView {
     }
     @IBAction func clickComparisonMaskButton(_ sender: Any) {
         dismissComparisonView()
+        // no selection exists return
         guard let index = tableView.indexPathForSelectedRow?.row else{
             return 
         }
+        // the same selection as last time return
+        if preSelectedIndex == index{
+            return 
+        }
+        // record this selection
+        preSelectedIndex = index
         delegate?.didSelectedCell(view: self, index: index)
     }
     

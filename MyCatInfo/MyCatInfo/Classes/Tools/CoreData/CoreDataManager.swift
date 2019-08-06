@@ -69,6 +69,8 @@ class CoreDataManager: NSObject {
             fatalError();
         }
         saveContext()
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: InfoCommon.SCShouldRefreshFavouriteCollectionView), object: nil)
     }
     
     func deleteWith(name: String) {

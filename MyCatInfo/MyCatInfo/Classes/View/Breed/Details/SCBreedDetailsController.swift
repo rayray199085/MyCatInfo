@@ -13,11 +13,20 @@ protocol SCBreedDetailsControllerDelegate: NSObjectProtocol {
     func didSelectedComparisonCell(view: SCBreedDetailsController,index: Int, complete:(_ viewModel: SCBreedViewModel?)->())
 }
 class SCBreedDetailsController: UIViewController {
+    convenience init(viewModel: SCBreedViewModel?, breedNames: [String]?){
+        self.init()
+        self.breedNames = breedNames
+        self.viewModel = viewModel
+    }
     weak var delegate: SCBreedDetailsControllerDelegate?
+    private var breedNames: [String]?
+    private var viewModel: SCBreedViewModel?
     
-    private lazy var comparisonView = SCBreedComparisonView.comparisonView()
-    var breedNames: [String]?
-    var viewModel: SCBreedViewModel?
+    private lazy var comparisonView: SCBreedComparisonView = {
+        let v = SCBreedComparisonView.comparisonView(names: breedNames)
+        v.delegate = self
+        return v
+    }()
     private lazy var comparisonButton: UIButton = {
         let btn = UIButton()
         btn.setBackgroundImage(UIImage(named: "comparison"), for: [])
@@ -28,9 +37,10 @@ class SCBreedDetailsController: UIViewController {
     @IBOutlet weak var tabedSlideView: DLTabedSlideView!
     
     private let featureController = SCBreedFeatureController()
+    private let wikiController = SCBreedWikiController()
     
     private let tabInfoArray = [["image":"feature", "title": "Feature"],
-                                ["image":"picture", "title": "Picture"]]
+                                ["image":"wiki", "title": "Wikipedia"]]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -47,8 +57,6 @@ private extension SCBreedDetailsController{
         setupTabedSlideView()
         setupNavigationItem()
         navigationController?.view.addSubview(comparisonView)
-        comparisonView.breedNames = breedNames
-        comparisonView.delegate = self
     }
     func setupNavigationItem(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: comparisonButton)
@@ -91,6 +99,8 @@ extension SCBreedDetailsController: DLTabedSlideViewDelegate{
         switch index {
         case 0:
             return featureController
+        case 1:
+            return wikiController
         default:
             break
         }
@@ -99,7 +109,13 @@ extension SCBreedDetailsController: DLTabedSlideViewDelegate{
     func dlTabedSlideView(_ sender: DLTabedSlideView!, didSelectedAt index: Int) {
         switch index {
         case 0:
-            featureController.viewModel = viewModel
+            if featureController.viewModel == nil{
+                featureController.viewModel = viewModel
+            }
+        case 1:
+            if wikiController.wikiUrl == nil{
+                 wikiController.wikiUrl = viewModel?.wikiUrl
+            }
         default:
             break
         }
@@ -113,6 +129,7 @@ extension SCBreedDetailsController: SCBreedComparisonViewDelegate{
     }
     
     func didSelectedCell(view: SCBreedComparisonView, index: Int) {
+        // get comparison breed viewModel when selecting a name
         delegate?.didSelectedComparisonCell(view: self, index: index, complete: { [weak self](comparisonViewModel) in
             self?.featureController.comparisonViewModel = comparisonViewModel
         })

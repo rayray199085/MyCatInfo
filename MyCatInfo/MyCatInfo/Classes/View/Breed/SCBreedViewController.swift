@@ -37,9 +37,9 @@ private extension SCBreedViewController{
 }
 extension SCBreedViewController: SCBreedDisplayViewDelegate{
     func didSelectedCell(view: SCBreedDisplayView, index: Int) {
-        let vc = SCBreedDetailsController()
-        vc.viewModel = listViewModel.viewModels?[index]
-        vc.breedNames = listViewModel.breedNames
+        let vc = SCBreedDetailsController(
+            viewModel: listViewModel.viewModels?[index],
+            breedNames: listViewModel.breedNames)
         vc.title = listViewModel.viewModels?[index].breedName
         navigationController?.pushViewController(vc, animated: true)
         vc.delegate = self

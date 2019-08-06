@@ -26,6 +26,7 @@ class SCBreedDisplayViewCell: UITableViewCell {
             countryFlagLabel.text = viewModel?.countryEmojiString
             temperamentLabel.text = viewModel?.temperament
             likeButton.isSelected = viewModel?.isFavourite ?? false
+            lifespanLabel.text = "Lifespan: \(viewModel?.lifespan ?? "")"
         }
     }
     @objc private func didTapImageView(recognizer: UITapGestureRecognizer){
@@ -36,8 +37,11 @@ class SCBreedDisplayViewCell: UITableViewCell {
         breedImageView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImageView))
         breedImageView.addGestureRecognizer(tapRecognizer)
+        
+        improvePerformance()
     }
     
+    @IBOutlet weak var lifespanLabel: UILabel!
     @IBOutlet weak var temperamentLabel: UILabel!
     @IBOutlet weak var breedNameLabel: UILabel!
     @IBOutlet weak var breedDescriptionLabel: UILabel!

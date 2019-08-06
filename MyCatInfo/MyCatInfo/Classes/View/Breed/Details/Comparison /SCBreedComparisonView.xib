@@ -31,10 +31,10 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sB1-XY-oRo">
-                    <rect key="frame" x="5" y="178.5" width="404" height="539"/>
+                    <rect key="frame" x="5" y="246" width="404" height="404"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="sB1-XY-oRo" secondAttribute="height" multiplier="3:4" id="D56-VX-98c"/>
+                        <constraint firstAttribute="width" secondItem="sB1-XY-oRo" secondAttribute="height" multiplier="1:1" id="D56-VX-98c"/>
                     </constraints>
                 </tableView>
             </subviews>
