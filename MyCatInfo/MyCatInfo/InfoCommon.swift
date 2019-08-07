@@ -29,7 +29,7 @@ struct InfoCommon{
     static let breedUrl = "https://api.thecatapi.com/v1/breeds"
     static let searchBreedsUrl = "https://api.thecatapi.com/v1/images/search"
     static let catFactsUrl = "https://cat-fact.herokuapp.com/facts/random"
-    static let randomPicUrl = "https://aws.random.cat/meow"
+    static let randomPicUrl = "https://api.thecatapi.com/v1/images/search?mime_types=png,jpg"
     
     static let SCShouldRefreshFavouriteCollectionView = "SCShouldRefreshFavouriteCollectionView"
 }

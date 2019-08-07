@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D021D0622FA7DE300913F51 /* SCFactsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D021D0522FA7DE300913F51 /* SCFactsCollectionLayout.swift */; };
+		0D021D0822FA7FD700913F51 /* SCFactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D021D0722FA7FD700913F51 /* SCFactsCollectionViewCell.swift */; };
+		0D021D0A22FA7FE500913F51 /* SCFactsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D021D0922FA7FE500913F51 /* SCFactsCollectionViewCell.xib */; };
 		0D3815AC22F90401005ED942 /* SCBreedWikiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815AB22F90401005ED942 /* SCBreedWikiController.swift */; };
 		0D3815AF22F914FD005ED942 /* SCFavouriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815AE22F914FD005ED942 /* SCFavouriteListViewModel.swift */; };
 		0D3815B222F92D60005ED942 /* SCBaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815B122F92D60005ED942 /* SCBaseListViewModel.swift */; };
@@ -16,8 +19,6 @@
 		0D3815BA22F94840005ED942 /* SCFactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3815B922F94840005ED942 /* SCFactsViewController.xib */; };
 		0D3815BD22F94961005ED942 /* SCFactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815BC22F94961005ED942 /* SCFactsListViewModel.swift */; };
 		0D3815C022F94B2D005ED942 /* SCFactsDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815BF22F94B2D005ED942 /* SCFactsDataItem.swift */; };
-		0D3815C222F95AB6005ED942 /* SCFactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815C122F95AB6005ED942 /* SCFactsTableViewCell.swift */; };
-		0D3815C422F95AC6005ED942 /* SCFactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3815C322F95AC6005ED942 /* SCFactsTableViewCell.xib */; };
 		0D3815C622F95E86005ED942 /* SCFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815C522F95E86005ED942 /* SCFactsViewModel.swift */; };
 		0DD197FF22F50B760078B320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD197FE22F50B760078B320 /* AppDelegate.swift */; };
 		0DD1980622F50B790078B320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1980522F50B790078B320 /* Assets.xcassets */; };
@@ -156,6 +157,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D021D0522FA7DE300913F51 /* SCFactsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsCollectionLayout.swift; sourceTree = "<group>"; };
+		0D021D0722FA7FD700913F51 /* SCFactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D021D0922FA7FE500913F51 /* SCFactsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCFactsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0D3815AB22F90401005ED942 /* SCBreedWikiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBreedWikiController.swift; sourceTree = "<group>"; };
 		0D3815AE22F914FD005ED942 /* SCFavouriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFavouriteListViewModel.swift; sourceTree = "<group>"; };
 		0D3815B122F92D60005ED942 /* SCBaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBaseListViewModel.swift; sourceTree = "<group>"; };
@@ -165,8 +169,6 @@
 		0D3815B922F94840005ED942 /* SCFactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCFactsViewController.xib; sourceTree = "<group>"; };
 		0D3815BC22F94961005ED942 /* SCFactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsListViewModel.swift; sourceTree = "<group>"; };
 		0D3815BF22F94B2D005ED942 /* SCFactsDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsDataItem.swift; sourceTree = "<group>"; };
-		0D3815C122F95AB6005ED942 /* SCFactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsTableViewCell.swift; sourceTree = "<group>"; };
-		0D3815C322F95AC6005ED942 /* SCFactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCFactsTableViewCell.xib; sourceTree = "<group>"; };
 		0D3815C522F95E86005ED942 /* SCFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsViewModel.swift; sourceTree = "<group>"; };
 		0DD197FB22F50B760078B320 /* MyCatInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCatInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD197FE22F50B760078B320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +335,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2EA7FF22FA4CBE0036085A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D021D0722FA7FD700913F51 /* SCFactsCollectionViewCell.swift */,
+				0D021D0922FA7FE500913F51 /* SCFactsCollectionViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		0D3815AA22F903D7005ED942 /* Wikipedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,10 +590,10 @@
 		0DD1987422F513330078B320 /* Facts */ = {
 			isa = PBXGroup;
 			children = (
+				0D2EA7FF22FA4CBE0036085A /* cells */,
 				0DD1987B22F513980078B320 /* SCFactsViewController.swift */,
 				0D3815B922F94840005ED942 /* SCFactsViewController.xib */,
-				0D3815C122F95AB6005ED942 /* SCFactsTableViewCell.swift */,
-				0D3815C322F95AC6005ED942 /* SCFactsTableViewCell.xib */,
+				0D021D0522FA7DE300913F51 /* SCFactsCollectionLayout.swift */,
 			);
 			path = Facts;
 			sourceTree = "<group>";
@@ -840,6 +851,7 @@
 				0DD1990022F5409E0078B320 /* hima.json in Resources */,
 				0DD1991322F5409E0078B320 /* norw.json in Resources */,
 				0DD198EE22F5409E0078B320 /* chau.json in Resources */,
+				0D021D0A22FA7FE500913F51 /* SCFactsCollectionViewCell.xib in Resources */,
 				0DD1991722F5409E0078B320 /* tvan.json in Resources */,
 				0DD198D822F5409E0078B320 /* beng.json in Resources */,
 				0DD198E822F5409E0078B320 /* java.json in Resources */,
@@ -906,7 +918,6 @@
 				0DD1990B22F5409E0078B320 /* pixi.json in Resources */,
 				0DD198F922F5409E0078B320 /* bure.json in Resources */,
 				0DD1990222F5409E0078B320 /* emau.json in Resources */,
-				0D3815C422F95AC6005ED942 /* SCFactsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +1002,8 @@
 				0D3815C622F95E86005ED942 /* SCFactsViewModel.swift in Sources */,
 				0DF223BA22F6623800E12353 /* AppDelegate+extension.swift in Sources */,
 				0DD1985A22F5107E0078B320 /* UIBarButtonItem+extension.swift in Sources */,
+				0D021D0622FA7DE300913F51 /* SCFactsCollectionLayout.swift in Sources */,
+				0D021D0822FA7FD700913F51 /* SCFactsCollectionViewCell.swift in Sources */,
 				0DD1986622F5107E0078B320 /* UIColor+SCAddition.m in Sources */,
 				0DF223C622F6B1DA00E12353 /* SCBreedFeatureController.swift in Sources */,
 				0DD1984F22F5107E0078B320 /* UIView+extension.swift in Sources */,
@@ -1030,7 +1043,6 @@
 				0D3815B622F930EC005ED942 /* SCFavouriteCollectionViewCell.swift in Sources */,
 				0DD1984922F5107E0078B320 /* UIImageView+extension.swift in Sources */,
 				0DD1987122F5128A0078B320 /* InfoCommon.swift in Sources */,
-				0D3815C222F95AB6005ED942 /* SCFactsTableViewCell.swift in Sources */,
 				0DD1988522F51BD40078B320 /* SCBreedListViewModel.swift in Sources */,
 				0DD1986222F5107E0078B320 /* NSString+SCAddition.m in Sources */,
 				0DD1986122F5107E0078B320 /* UIImageView+SCAddition.m in Sources */,

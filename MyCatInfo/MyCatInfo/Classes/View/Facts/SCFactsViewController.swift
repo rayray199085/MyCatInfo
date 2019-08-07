@@ -8,45 +8,78 @@
 
 import UIKit
 import SVProgressHUD
+import SKPhotoBrowser
 
 private let reuseIdentifier = "facts_cell"
 class SCFactsViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    
     private let listViewModel = SCFactsListViewModel()
-
+    private var shouldLoadMore = false
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        configCollectionView()
         loadData()
-    }
-}
-private extension SCFactsViewController{
-    func setupUI(){
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: "SCFactsTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
     }
     func loadData(){
         SVProgressHUD.show()
-        listViewModel.loadCatFacts { (isSuccess) in
-            self.tableView.reloadData()
+        listViewModel.loadCatFacts { [weak self](isSuccess) in
+            self?.collectionView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
 }
-extension SCFactsViewController: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+private extension SCFactsViewController{
+    func configCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "SCFactsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+    }
+}
+extension SCFactsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listViewModel.viewModels?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SCFactsTableViewCell
-        cell.factsLabel.text = listViewModel.viewModels?[indexPath.row].facts
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SCFactsCollectionViewCell
+        cell.viewModel = listViewModel.viewModels?[indexPath.item]
+        cell.delegate = self
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return listViewModel.viewModels?[indexPath.row].cellHeight ?? 0
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == (listViewModel.viewModels?.count ?? 0) - 1 && !shouldLoadMore{
+            shouldLoadMore = true
+            SVProgressHUD.show()
+            listViewModel.loadCatFacts { [weak self](isSuccess) in
+                self?.collectionView.reloadData()
+                self?.shouldLoadMore = false
+                SVProgressHUD.dismiss()
+            }
+        }
+    }
+}
+extension SCFactsViewController: SCFactsCollectionViewCellDelegate{
+    func didTapImageView(view: SCFactsCollectionViewCell, imageUrlString: String?) {
+        guard let urlString = imageUrlString,
+            let url = URL(string: urlString) else{
+                return
+        }
+        UIImage.downloadImage(url: url) { (image) in
+            guard let image = image else{
+                return
+            }
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImage(image)
+            photo.shouldCachePhotoURLImage = false
+            images.append(photo)
+            
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            self.present(browser, animated: true, completion: {})
+        }
     }
 }

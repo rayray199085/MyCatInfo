@@ -27,3 +27,8 @@ struct SCFactsDataItem: Codable {
         case used
     }
 }
+struct SCFactsImageDataItem: Codable{
+    let url: String?
+    let width: Int?
+    let height: Int?
+}

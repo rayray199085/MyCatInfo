@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 private extension AppDelegate{
     func setupBasicSettings(){
+        SVProgressHUD.setForegroundColor(InfoCommon.barColor)
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
         SVProgressHUD.setMinimumDismissTimeInterval(1.0)
         NetworkActivityIndicatorManager.shared.isEnabled = true

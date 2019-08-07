@@ -12,18 +12,36 @@ class SCFactsListViewModel{
     var viewModels: [SCFactsViewModel]?
     
     func loadCatFacts(completion:@escaping (_ isSuccess: Bool)->()){
-        SCNetworkManager.shared.fetchCatFacts { (data, isSuccess) in
-            guard let data = data,
-                  let factsItems = try? JSONDecoder().decode([SCFactsDataItem].self, from: data) else{
-                    completion(false)
-                    return
+        let group = DispatchGroup()
+        var imageItems = [SCFactsImageDataItem]()
+        for _ in 0..<10{
+            group.enter()
+            SCNetworkManager.shared.fetchARandomImage { (data, isSuccess) in
+                if let data = data,
+                   let imageItem = try? JSONDecoder().decode([SCFactsImageDataItem].self, from: data).first {
+                    imageItems.append(imageItem)
+                }
+                group.leave()
             }
-            var viewModels = [SCFactsViewModel]()
-            for item in factsItems{
-                viewModels.append(SCFactsViewModel(factsItem: item))
+        }
+        group.notify(queue: .main) {
+            SCNetworkManager.shared.fetchCatFacts { (data, isSuccess) in
+                guard let data = data,
+                    let factsItems = try? JSONDecoder().decode([SCFactsDataItem].self, from: data) else{
+                        completion(false)
+                        return
+                }
+                var viewModels = [SCFactsViewModel]()
+                for (index,item) in factsItems.enumerated(){
+                    viewModels.append(SCFactsViewModel(factsItem: item, imageItem: imageItems[index]))
+                }
+                if self.viewModels == nil{
+                    self.viewModels = viewModels
+                }else{
+                    self.viewModels! += viewModels
+                }
+                completion(true)
             }
-            self.viewModels = viewModels
-            completion(true)
         }
     }
 }

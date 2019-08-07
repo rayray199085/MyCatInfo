@@ -10,19 +10,29 @@ import Foundation
 
 struct SCFactsViewModel {
     var facts: String?
-    var cellHeight: CGFloat?
-   
+    var imageUrl: String?
+    var imageWidth: CGFloat?
+    var imageHeight: CGFloat?
     
-    init(factsItem: SCFactsDataItem) {
+    init(factsItem: SCFactsDataItem, imageItem: SCFactsImageDataItem) {
         facts = factsItem.text
-        cellHeight = calculateCellHeight()
+        imageUrl = imageItem.url
+        let size = updateImageSize(width: imageItem.width, height: imageItem.height)
+        imageWidth = size.width
+        imageHeight = size.height
     }
-    func calculateCellHeight()->CGFloat{
-        let margin: CGFloat = 3
-        let viewWidth = UIScreen.screenWidth() - margin * 2
-        var height = margin
-        height += facts?.heightWithConstrainedWidth(width: viewWidth, font: UIFont.systemFont(ofSize: 15)) ?? 0
-        height += margin
-        return height
+    func updateImageSize(width: Int?, height: Int?)->CGSize{
+        let height = CGFloat(height ?? 0)
+        let width = CGFloat(width ?? 0)
+        var size = CGSize(width: width, height: height)
+        let maxWidth: CGFloat = UIScreen.screenWidth() * 0.7
+        if size.width > maxWidth {
+            size.width = maxWidth
+            size.height = size.width * height / width
+        }
+        if size.height > UIScreen.screenHeight() / 2{
+            size.height = UIScreen.screenHeight() / 2
+        }
+        return size
     }
 }

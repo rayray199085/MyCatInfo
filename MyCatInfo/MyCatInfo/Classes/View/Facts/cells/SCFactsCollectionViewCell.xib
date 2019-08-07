@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6M8-IN-s4i" customClass="SCFactsCollectionViewCell" customModule="MyCatInfo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="504" height="614"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="504" height="614"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-YH-7c9">
+                        <rect key="frame" x="105" y="3" width="294" height="294"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="294" id="SdL-8W-Gy1"/>
+                            <constraint firstAttribute="height" constant="294" id="wUm-MG-Mhd"/>
+                        </constraints>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-XH-vBs">
+                        <rect key="frame" x="3" y="300" width="498" height="311"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <variation key="widthClass=regular">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        </variation>
+                    </textView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Jbf-XH-vBs" firstAttribute="top" secondItem="cj7-YH-7c9" secondAttribute="bottom" constant="3" id="DS6-Xw-o21"/>
+                <constraint firstAttribute="bottom" secondItem="Jbf-XH-vBs" secondAttribute="bottom" constant="3" id="Hto-dy-OWa"/>
+                <constraint firstItem="cj7-YH-7c9" firstAttribute="centerX" secondItem="6M8-IN-s4i" secondAttribute="centerX" id="VZb-hW-bxr"/>
+                <constraint firstAttribute="trailing" secondItem="Jbf-XH-vBs" secondAttribute="trailing" constant="3" id="WyN-DM-IYr"/>
+                <constraint firstItem="cj7-YH-7c9" firstAttribute="top" secondItem="6M8-IN-s4i" secondAttribute="top" constant="3" id="dYa-2e-N2N"/>
+                <constraint firstItem="Jbf-XH-vBs" firstAttribute="leading" secondItem="6M8-IN-s4i" secondAttribute="leading" constant="3" id="gdq-rh-zGz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="mVV-Pt-ha5"/>
+            <size key="customSize" width="504" height="614"/>
+            <connections>
+                <outlet property="catImageView" destination="cj7-YH-7c9" id="43t-VW-8uM"/>
+                <outlet property="factsTextView" destination="Jbf-XH-vBs" id="e0V-0z-1DF"/>
+                <outlet property="imageHeightCons" destination="wUm-MG-Mhd" id="2mU-UQ-2cF"/>
+                <outlet property="imageWidthCons" destination="SdL-8W-Gy1" id="rTe-gT-yRI"/>
+            </connections>
+            <point key="canvasLocation" x="301.44927536231887" y="186.16071428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
