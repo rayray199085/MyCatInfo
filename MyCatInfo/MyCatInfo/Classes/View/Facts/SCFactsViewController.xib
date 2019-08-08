@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SCFactsViewController" customModule="MyCatInfo" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="FLM-23-FjF" id="NMz-rX-gWc"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iaF-4A-2d7"/>
             </connections>
         </placeholder>
@@ -20,25 +19,7 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HYExpandableLabel">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FLM-23-FjF">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rAP-1q-e8K" customClass="SCFactsCollectionLayout" customModule="MyCatInfo" customModuleProvider="target">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FLM-23-FjF" secondAttribute="bottom" id="DJQ-u6-vmR"/>
-                <constraint firstItem="FLM-23-FjF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ldH-pB-HIW"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FLM-23-FjF" secondAttribute="trailing" id="tWz-mh-lfP"/>
-                <constraint firstItem="FLM-23-FjF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xPc-83-vef"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>

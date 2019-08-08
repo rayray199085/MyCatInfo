@@ -12,10 +12,8 @@ pod "Alamofire"
 pod "AlamofireNetworkActivityIndicator"
 pod "pop"
 pod "SVProgressHUD"
-pod "SCTableIndex"
 pod 'SKPhotoBrowser'
 pod 'DLSlideView', :git => 'https://github.com/agdsdl/DLSlideView.git'
-pod 'AnimatedCollectionViewLayout'
 pod 'Charts'
 pod 'CHTCollectionViewWaterfallLayout/Swift'
 end

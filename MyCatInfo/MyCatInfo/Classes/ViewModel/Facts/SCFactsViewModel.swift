@@ -13,6 +13,7 @@ struct SCFactsViewModel {
     var imageUrl: String?
     var imageWidth: CGFloat?
     var imageHeight: CGFloat?
+    var shouldShowMore: Bool?
     
     init(factsItem: SCFactsDataItem, imageItem: SCFactsImageDataItem) {
         facts = factsItem.text
@@ -20,8 +21,17 @@ struct SCFactsViewModel {
         let size = updateImageSize(width: imageItem.width, height: imageItem.height)
         imageWidth = size.width
         imageHeight = size.height
+        shouldShowMore = shouldShowMoreButton()
     }
-    func updateImageSize(width: Int?, height: Int?)->CGSize{
+    private func shouldShowMoreButton()->Bool{
+        let margin: CGFloat = 3
+        let singleLineLabelHeight: CGFloat = 21
+        let viewWidth = UIScreen.screenWidth() - 2 * margin
+        let height = facts?.heightWithConstrainedWidth(width: viewWidth, font: UIFont.systemFont(ofSize: 17)) ?? 0
+        return height > 2 * singleLineLabelHeight
+    }
+    
+    private func updateImageSize(width: Int?, height: Int?)->CGSize{
         let height = CGFloat(height ?? 0)
         let width = CGFloat(width ?? 0)
         var size = CGSize(width: width, height: height)
@@ -29,9 +39,6 @@ struct SCFactsViewModel {
         if size.width > maxWidth {
             size.width = maxWidth
             size.height = size.width * height / width
-        }
-        if size.height > UIScreen.screenHeight() / 2{
-            size.height = UIScreen.screenHeight() / 2
         }
         return size
     }

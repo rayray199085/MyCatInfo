@@ -10,60 +10,34 @@ import UIKit
 import SVProgressHUD
 import SKPhotoBrowser
 
-private let reuseIdentifier = "facts_cell"
 class SCFactsViewController: UIViewController {
+    private var expandableView: ExpandableTableView!
     private let listViewModel = SCFactsListViewModel()
-    private var shouldLoadMore = false
-    
-    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        configCollectionView()
+        setupUI()
         loadData()
     }
+}
+private extension SCFactsViewController{
+    func setupUI(){
+        let topBarHeight = UIApplication.shared.statusBarFrame.size.height +
+            (navigationController?.navigationBar.frame.height ?? 0.0)
+        expandableView = ExpandableTableView.initView(navigationBarHeight: topBarHeight)
+        view.addSubview(expandableView)
+        expandableView.delegate = self
+    }
+    
     func loadData(){
         SVProgressHUD.show()
         listViewModel.loadCatFacts { [weak self](isSuccess) in
-            self?.collectionView.reloadData()
+            self?.expandableView.viewModels = self?.listViewModel.viewModels
             SVProgressHUD.dismiss()
         }
     }
 }
-private extension SCFactsViewController{
-    func configCollectionView(){
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "SCFactsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-    }
-}
-extension SCFactsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listViewModel.viewModels?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SCFactsCollectionViewCell
-        cell.viewModel = listViewModel.viewModels?[indexPath.item]
-        cell.delegate = self
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == (listViewModel.viewModels?.count ?? 0) - 1 && !shouldLoadMore{
-            shouldLoadMore = true
-            SVProgressHUD.show()
-            listViewModel.loadCatFacts { [weak self](isSuccess) in
-                self?.collectionView.reloadData()
-                self?.shouldLoadMore = false
-                SVProgressHUD.dismiss()
-            }
-        }
-    }
-}
-extension SCFactsViewController: SCFactsCollectionViewCellDelegate{
-    func didTapImageView(view: SCFactsCollectionViewCell, imageUrlString: String?) {
+extension SCFactsViewController: ExpandableTableViewDelegate{
+    func showImageInLargeMode(view: ExpandableTableView, imageUrlString: String?) {
         guard let urlString = imageUrlString,
             let url = URL(string: urlString) else{
                 return
@@ -80,6 +54,23 @@ extension SCFactsViewController: SCFactsCollectionViewCellDelegate{
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(0)
             self.present(browser, animated: true, completion: {})
+        }
+    }
+    
+    func pullDownToRefresh(view: ExpandableTableView, completion: @escaping () -> ()) {
+        listViewModel.viewModels = nil
+        listViewModel.loadCatFacts { [weak self](isSuccess) in
+            self?.expandableView.viewModels = self?.listViewModel.viewModels
+            completion()
+        }
+    }
+    
+    func loadMoreData(view: ExpandableTableView, completion: @escaping () -> ()) {
+        SVProgressHUD.show()
+        listViewModel.loadCatFacts { [weak self](isSuccess) in
+            self?.expandableView.viewModels = self?.listViewModel.viewModels
+            completion()
+            SVProgressHUD.dismiss()
         }
     }
 }

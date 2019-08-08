@@ -2,14 +2,12 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireNetworkActivityIndicator (2.4.0):
     - Alamofire (~> 4.8)
-  - AnimatedCollectionViewLayout (0.6.0)
   - Charts (3.3.0):
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
   - CHTCollectionViewWaterfallLayout/Swift (0.9.7)
   - DLSlideView (0.8.3)
   - pop (1.0.12)
-  - SCTableIndex (0.3.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
@@ -19,12 +17,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
-  - AnimatedCollectionViewLayout
   - Charts
   - CHTCollectionViewWaterfallLayout/Swift
   - DLSlideView (from `https://github.com/agdsdl/DLSlideView.git`)
   - pop
-  - SCTableIndex
   - SDWebImage
   - SKPhotoBrowser
   - SVProgressHUD
@@ -33,11 +29,9 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireNetworkActivityIndicator
-    - AnimatedCollectionViewLayout
     - Charts
     - CHTCollectionViewWaterfallLayout
     - pop
-    - SCTableIndex
     - SDWebImage
     - SKPhotoBrowser
     - SVProgressHUD
@@ -54,16 +48,14 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
-  AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   DLSlideView: b517599cf60b1de71cb1b1e0bb356a893669c005
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  SCTableIndex: db2a0917f5df1d63dfa2b02bb232426da414a66d
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8d03e2ca3ec4efef12fe2a0c4c022e51169356fb
+PODFILE CHECKSUM: fc38c0f09aba1105d5f38545a0ef381065d3945d
 
 COCOAPODS: 1.6.1
