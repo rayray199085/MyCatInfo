@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2CABBF22FCD36E0024C29B /* SCPuzzleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CABBE22FCD36E0024C29B /* SCPuzzleViewController.xib */; };
+		0D2CABC222FCF1A80024C29B /* SCPuzzleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CABC122FCF1A80024C29B /* SCPuzzleSettingsView.swift */; };
+		0D2CABC422FCF1C90024C29B /* SCPuzzleSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CABC322FCF1C90024C29B /* SCPuzzleSettingsView.xib */; };
+		0D2CABC622FCFA810024C29B /* SCPuzzleDifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CABC522FCFA810024C29B /* SCPuzzleDifficultyCell.swift */; };
+		0D2CABC822FCFA900024C29B /* SCPuzzleDifficultyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CABC722FCFA900024C29B /* SCPuzzleDifficultyCell.xib */; };
+		0D2CABCC22FD258A0024C29B /* SCPuzzleImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CABCB22FD258A0024C29B /* SCPuzzleImagesCell.swift */; };
+		0D2CABCE22FD259B0024C29B /* SCPuzzleImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CABCD22FD259B0024C29B /* SCPuzzleImagesCell.xib */; };
 		0D3815AC22F90401005ED942 /* SCBreedWikiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815AB22F90401005ED942 /* SCBreedWikiController.swift */; };
 		0D3815AF22F914FD005ED942 /* SCFavouriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815AE22F914FD005ED942 /* SCFavouriteListViewModel.swift */; };
 		0D3815B222F92D60005ED942 /* SCBaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815B122F92D60005ED942 /* SCBaseListViewModel.swift */; };
@@ -165,6 +172,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2CABBE22FCD36E0024C29B /* SCPuzzleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCPuzzleViewController.xib; sourceTree = "<group>"; };
+		0D2CABC122FCF1A80024C29B /* SCPuzzleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPuzzleSettingsView.swift; sourceTree = "<group>"; };
+		0D2CABC322FCF1C90024C29B /* SCPuzzleSettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCPuzzleSettingsView.xib; sourceTree = "<group>"; };
+		0D2CABC522FCFA810024C29B /* SCPuzzleDifficultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPuzzleDifficultyCell.swift; sourceTree = "<group>"; };
+		0D2CABC722FCFA900024C29B /* SCPuzzleDifficultyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCPuzzleDifficultyCell.xib; sourceTree = "<group>"; };
+		0D2CABCB22FD258A0024C29B /* SCPuzzleImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPuzzleImagesCell.swift; sourceTree = "<group>"; };
+		0D2CABCD22FD259B0024C29B /* SCPuzzleImagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCPuzzleImagesCell.xib; sourceTree = "<group>"; };
 		0D3815AB22F90401005ED942 /* SCBreedWikiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBreedWikiController.swift; sourceTree = "<group>"; };
 		0D3815AE22F914FD005ED942 /* SCFavouriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFavouriteListViewModel.swift; sourceTree = "<group>"; };
 		0D3815B122F92D60005ED942 /* SCBaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBaseListViewModel.swift; sourceTree = "<group>"; };
@@ -351,6 +365,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2CABC022FCF1850024C29B /* Settings  */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CABCA22FD24F20024C29B /* Cells */,
+				0D2CABC122FCF1A80024C29B /* SCPuzzleSettingsView.swift */,
+				0D2CABC322FCF1C90024C29B /* SCPuzzleSettingsView.xib */,
+			);
+			path = "Settings ";
+			sourceTree = "<group>";
+		};
+		0D2CABCA22FD24F20024C29B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CABC522FCFA810024C29B /* SCPuzzleDifficultyCell.swift */,
+				0D2CABC722FCFA900024C29B /* SCPuzzleDifficultyCell.xib */,
+				0D2CABCB22FD258A0024C29B /* SCPuzzleImagesCell.swift */,
+				0D2CABCD22FD259B0024C29B /* SCPuzzleImagesCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		0D3815AA22F903D7005ED942 /* Wikipedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,8 +643,10 @@
 		0DD1987522F513400078B320 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
-				0DED77CE22FC005800A587A7 /* SlidingPuzzleView.swift */,
+				0D2CABC022FCF1850024C29B /* Settings  */,
 				0DD1987D22F513A90078B320 /* SCPuzzleViewController.swift */,
+				0D2CABBE22FCD36E0024C29B /* SCPuzzleViewController.xib */,
+				0DED77CE22FC005800A587A7 /* SlidingPuzzleView.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -886,6 +923,7 @@
 				0DD198EE22F5409E0078B320 /* chau.json in Resources */,
 				0DD1991722F5409E0078B320 /* tvan.json in Resources */,
 				0DD198D822F5409E0078B320 /* beng.json in Resources */,
+				0D2CABC422FCF1C90024C29B /* SCPuzzleSettingsView.xib in Resources */,
 				0DD198E822F5409E0078B320 /* java.json in Resources */,
 				0DD1990622F5409E0078B320 /* munc.json in Resources */,
 				0DD198F722F5409E0078B320 /* jbob.json in Resources */,
@@ -895,6 +933,7 @@
 				0DD198F022F5409E0078B320 /* lape.json in Resources */,
 				0DD1991022F5409E0078B320 /* ycho.json in Resources */,
 				0DD1989222F5398B0078B320 /* breedsIdList.json in Resources */,
+				0D2CABBF22FCD36E0024C29B /* SCPuzzleViewController.xib in Resources */,
 				0DD1990D22F5409E0078B320 /* ragd.json in Resources */,
 				0DD198E422F5409E0078B320 /* dons.json in Resources */,
 				0DD1990F22F5409E0078B320 /* bomb.json in Resources */,
@@ -917,6 +956,7 @@
 				0DD198FA22F5409E0078B320 /* hbro.json in Resources */,
 				0DD1990C22F5409E0078B320 /* awir.json in Resources */,
 				0DD198E322F5409E0078B320 /* ctif.json in Resources */,
+				0D2CABC822FCFA900024C29B /* SCPuzzleDifficultyCell.xib in Resources */,
 				0DD1990822F5409E0078B320 /* nebe.json in Resources */,
 				0DD198E922F5409E0078B320 /* mcoo.json in Resources */,
 				0DDB808022F8049900FD8AA1 /* SCBreedComparisonView.xib in Resources */,
@@ -952,6 +992,7 @@
 				0DD1980622F50B790078B320 /* Assets.xcassets in Resources */,
 				0DD198E022F5409E0078B320 /* bsho.json in Resources */,
 				0DD1990B22F5409E0078B320 /* pixi.json in Resources */,
+				0D2CABCE22FD259B0024C29B /* SCPuzzleImagesCell.xib in Resources */,
 				0DD198F922F5409E0078B320 /* bure.json in Resources */,
 				0DD1990222F5409E0078B320 /* emau.json in Resources */,
 			);
@@ -996,6 +1037,7 @@
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DLSlideView/DLSlideView.framework",
+				"${BUILT_PRODUCTS_DIR}/FTFoldingTableView/FTFoldingTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1010,6 +1052,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLSlideView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FTFoldingTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1028,6 +1071,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD1986722F5107E0078B320 /* SCNetworkManager.swift in Sources */,
+				0D2CABCC22FD258A0024C29B /* SCPuzzleImagesCell.swift in Sources */,
 				0DDB808222F80ED100FD8AA1 /* SCBreedComparisonCell.swift in Sources */,
 				0D3815BD22F94961005ED942 /* SCFactsListViewModel.swift in Sources */,
 				0DD1985522F5107E0078B320 /* UIViewController+extension.swift in Sources */,
@@ -1036,6 +1080,7 @@
 				0DD1985A22F5107E0078B320 /* UIBarButtonItem+extension.swift in Sources */,
 				0DD1986622F5107E0078B320 /* UIColor+SCAddition.m in Sources */,
 				0DF223C622F6B1DA00E12353 /* SCBreedFeatureController.swift in Sources */,
+				0D2CABC222FCF1A80024C29B /* SCPuzzleSettingsView.swift in Sources */,
 				0DD1984F22F5107E0078B320 /* UIView+extension.swift in Sources */,
 				0DD1984822F5107E0078B320 /* UIApplication+extension.swift in Sources */,
 				0DD1988822F51C4D0078B320 /* SCBreedDataItem.swift in Sources */,
@@ -1060,6 +1105,7 @@
 				0DD1987822F513770078B320 /* SCBreedViewController.swift in Sources */,
 				0D3815B222F92D60005ED942 /* SCBaseListViewModel.swift in Sources */,
 				0DD1984C22F5107E0078B320 /* UIWindow+extension.swift in Sources */,
+				0D2CABC622FCFA810024C29B /* SCPuzzleDifficultyCell.swift in Sources */,
 				0DD1985822F5107E0078B320 /* WKWebView+extension.swift in Sources */,
 				0DD1985422F5107E0078B320 /* UITabBarController+extension.swift in Sources */,
 				0DD1985322F5107E0078B320 /* Double+extension.swift in Sources */,

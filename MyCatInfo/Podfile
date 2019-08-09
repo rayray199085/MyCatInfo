@@ -16,4 +16,5 @@ pod 'SKPhotoBrowser'
 pod 'DLSlideView', :git => 'https://github.com/agdsdl/DLSlideView.git'
 pod 'Charts'
 pod 'CHTCollectionViewWaterfallLayout/Swift'
+pod 'FTFoldingTableView'
 end

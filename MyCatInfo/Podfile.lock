@@ -7,6 +7,7 @@ PODS:
   - Charts/Core (3.3.0)
   - CHTCollectionViewWaterfallLayout/Swift (0.9.7)
   - DLSlideView (0.8.3)
+  - FTFoldingTableView (1.1.0)
   - pop (1.0.12)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Charts
   - CHTCollectionViewWaterfallLayout/Swift
   - DLSlideView (from `https://github.com/agdsdl/DLSlideView.git`)
+  - FTFoldingTableView
   - pop
   - SDWebImage
   - SKPhotoBrowser
@@ -31,6 +33,7 @@ SPEC REPOS:
     - AlamofireNetworkActivityIndicator
     - Charts
     - CHTCollectionViewWaterfallLayout
+    - FTFoldingTableView
     - pop
     - SDWebImage
     - SKPhotoBrowser
@@ -51,11 +54,12 @@ SPEC CHECKSUMS:
   Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   DLSlideView: b517599cf60b1de71cb1b1e0bb356a893669c005
+  FTFoldingTableView: cfb31e0e7f35b01c928078f69eaf0eb21aa69116
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: fc38c0f09aba1105d5f38545a0ef381065d3945d
+PODFILE CHECKSUM: 3252e65b36cfc2e855e2d74008c7f0a90438d94a
 
 COCOAPODS: 1.6.1
