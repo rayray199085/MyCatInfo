@@ -20,12 +20,13 @@ class SCPuzzleSettingsView: UIView {
     private var selectedDifficulty: puzzleLevel = .easy
     private var selectedImage: UIImage?
     
-    private let titles = ["Difficulty", "Image Database"]
+    private let titles = ["Difficulties", "Image Database"]
     private let difficulties = ["Very Easy", "Easy", "Normal", "Hard"]
     
     private let imageGroups = [["cat_1","cat_2","cat_3"],
                                ["cat_4","cat_5","cat_6"],
-                               ["cat_7","cat_8","cat_9"]]
+                               ["cat_7","cat_8","cat_9"],
+                               ["cat_10","cat_11","cat_sample"]]
 
     @IBOutlet weak var tableView: FTFoldingTableView!
     @IBAction func clickSettingsMaskButton(_ sender: Any) {
@@ -46,16 +47,13 @@ class SCPuzzleSettingsView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableView.foldingDelegate = self
-        tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: "SCPuzzleDifficultyCell", bundle: nil), forCellReuseIdentifier: difficultyIdentifier)
-        tableView.register(UINib(nibName: "SCPuzzleImagesCell", bundle: nil), forCellReuseIdentifier: imageIdentifier)
+        setupTableView()
         
         let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeToLeft))
         recognizer.direction = .left
         tableView.addGestureRecognizer(recognizer)
     }
-    func cancelAllSelectedImages(){
+    func cancelAllSettingsSelectedImages(){
         for row in 0..<imageGroups.count{
             guard let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1)) as? SCPuzzleImagesCell else{
                 continue
@@ -131,8 +129,18 @@ extension SCPuzzleSettingsView: FTFoldingTableViewDelegate{
             break
         }
     }
+    func ftFoldingTableView(_ ftTableView: FTFoldingTableView!, backgroundColorForHeaderInSection section: Int) -> UIColor! {
+        return InfoCommon.comparisonBarColor
+    }
 }
 extension SCPuzzleSettingsView{
+    func setupTableView(){
+        tableView.foldingDelegate = self
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "SCPuzzleDifficultyCell", bundle: nil), forCellReuseIdentifier: difficultyIdentifier)
+        tableView.register(UINib(nibName: "SCPuzzleImagesCell", bundle: nil), forCellReuseIdentifier: imageIdentifier)
+    }
+    
     func showSettingsView(completion:@escaping ()->()){
         addPopHorizontalAnimation(fromValue: -UIScreen.screenWidth() / 2, toValue: UIScreen.screenWidth() / 2, springBounciness: 4, springSpeed: 4, delay: 0) { (_, _) in
             completion()
@@ -163,7 +171,7 @@ extension SCPuzzleSettingsView{
 }
 extension SCPuzzleSettingsView: SCPuzzleImagesCellDelegate{
     func didTapImageView(view: SCPuzzleImagesCell, name: String?) {
-        cancelAllSelectedImages()
+        cancelAllSettingsSelectedImages()
         guard let name = name else{
             return 
         }

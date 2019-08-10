@@ -32,4 +32,5 @@ struct InfoCommon{
     static let randomPicUrl = "https://api.thecatapi.com/v1/images/search?mime_types=png,jpg"
     
     static let SCShouldRefreshFavouriteCollectionView = "SCShouldRefreshFavouriteCollectionView"
+    static let SCShouldUpdateBreedTableView = "SCShouldUpdateBreedTableView"
 }

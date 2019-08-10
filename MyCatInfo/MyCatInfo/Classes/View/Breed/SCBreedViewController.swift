@@ -18,6 +18,19 @@ class SCBreedViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         loadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateBreedTableView), name: NSNotification.Name(rawValue: InfoCommon.SCShouldUpdateBreedTableView), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: InfoCommon.SCShouldUpdateBreedTableView), object: nil)
+    }
+    @objc private func handleUpdateBreedTableView(notification: Notification){
+        listViewModel.updateViewModelsAfterRemoveAllFavourite()
+        displayView.listViewModel = listViewModel
+        if (listViewModel.viewModels?.count ?? 0) > 0{
+            displayView.tableView.scroll2Top()
+        }
     }
 }
 private extension SCBreedViewController{

@@ -26,14 +26,14 @@ class CoreDataManager: NSObject {
         }
     }
     
-    func addFavouriteBreedWith(name: String) {
+    func addNewBreedWith(name: String) {
         let breed = NSEntityDescription.insertNewObject(forEntityName: "Breed", into: context) as! Breed
         breed.name = name
         breed.isFavourite = false
         saveContext()
     }
     
-    func getAllFavouriteBreeds() -> [Breed] {
+    func getAllBreeds() -> [Breed] {
         let fetchRequest: NSFetchRequest = Breed.fetchRequest()
         // for sort
 //        let sort = NSSortDescriptor(key: #keyPath(Breed.name), ascending: true)
@@ -55,6 +55,19 @@ class CoreDataManager: NSObject {
         } catch {
             fatalError();
         }
+    }
+    
+    func removeAllFavouriteBreeds(){
+        let breeds = getAllBreeds()
+        for breed in breeds{
+            guard let name = breed.name else{
+                continue
+            }
+            updateBreedFavouriteWith(name: name, newFavouriteStatus: false)
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: InfoCommon.SCShouldRefreshFavouriteCollectionView), object: nil)
+    
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: InfoCommon.SCShouldUpdateBreedTableView), object: nil)
     }
     
     func updateBreedFavouriteWith(name: String, newFavouriteStatus: Bool) {
@@ -88,7 +101,7 @@ class CoreDataManager: NSObject {
     }
     
     func deleteAllFavouriteBreeds() {
-        let result = getAllFavouriteBreeds()
+        let result = getAllBreeds()
         for breed in result {
             context.delete(breed)
         }

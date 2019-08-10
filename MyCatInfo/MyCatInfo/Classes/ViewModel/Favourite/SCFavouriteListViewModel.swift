@@ -10,8 +10,9 @@ import Foundation
 
 class SCFavouriteListViewModel: SCBaseListViewModel{
     func loadFavouriteBreedData(completion:@escaping (_ isSuccess: Bool)->()){
-        let res = CoreDataManager.shared.getAllFavouriteBreeds().filter { $0.isFavourite == true }
+        let res = CoreDataManager.shared.getAllBreeds().filter { $0.isFavourite == true }
         if res.count == 0{
+            self.viewModels = []
             completion(false)
             return
         }

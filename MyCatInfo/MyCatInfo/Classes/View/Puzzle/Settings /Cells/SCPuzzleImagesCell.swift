@@ -8,6 +8,7 @@
 
 import UIKit
 
+private let tagOffset = 100
 protocol SCPuzzleImagesCellDelegate:NSObjectProtocol {
     func didTapImageView(view: SCPuzzleImagesCell, name: String?)
 }
@@ -22,7 +23,7 @@ class SCPuzzleImagesCell: UITableViewCell {
         }
     }
     @objc private func didTapImageView(recognizer: UITapGestureRecognizer){
-        let ivTag = (recognizer.view?.tag ?? 0) - 100
+        let ivTag = (recognizer.view?.tag ?? 0) - tagOffset
         if ivTag >= 0 && ivTag < imageFrameViews.count{
               delegate?.didTapImageView(view: self, name: imageNameStrings?[ivTag])
               imageFrameViews[ivTag].backgroundColor = InfoCommon.barColor

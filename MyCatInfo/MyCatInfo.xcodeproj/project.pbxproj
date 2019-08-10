@@ -24,6 +24,8 @@
 		0D3815BD22F94961005ED942 /* SCFactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815BC22F94961005ED942 /* SCFactsListViewModel.swift */; };
 		0D3815C022F94B2D005ED942 /* SCFactsDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815BF22F94B2D005ED942 /* SCFactsDataItem.swift */; };
 		0D3815C622F95E86005ED942 /* SCFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3815C522F95E86005ED942 /* SCFactsViewModel.swift */; };
+		0D53B61C22FE78E8008021BB /* SCMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B61A22FE78E8008021BB /* SCMoreTableViewCell.xib */; };
+		0D53B61D22FE78E8008021BB /* SCMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B61B22FE78E8008021BB /* SCMoreTableViewCell.swift */; };
 		0DD197FF22F50B760078B320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD197FE22F50B760078B320 /* AppDelegate.swift */; };
 		0DD1980622F50B790078B320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1980522F50B790078B320 /* Assets.xcassets */; };
 		0DD1980922F50B790078B320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1980722F50B790078B320 /* LaunchScreen.storyboard */; };
@@ -189,6 +191,8 @@
 		0D3815BC22F94961005ED942 /* SCFactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsListViewModel.swift; sourceTree = "<group>"; };
 		0D3815BF22F94B2D005ED942 /* SCFactsDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsDataItem.swift; sourceTree = "<group>"; };
 		0D3815C522F95E86005ED942 /* SCFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCFactsViewModel.swift; sourceTree = "<group>"; };
+		0D53B61A22FE78E8008021BB /* SCMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCMoreTableViewCell.xib; sourceTree = "<group>"; };
+		0D53B61B22FE78E8008021BB /* SCMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCMoreTableViewCell.swift; sourceTree = "<group>"; };
 		0DD197FB22F50B760078B320 /* MyCatInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCatInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD197FE22F50B760078B320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD1980522F50B790078B320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -654,6 +658,8 @@
 		0DD1987622F513460078B320 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				0D53B61B22FE78E8008021BB /* SCMoreTableViewCell.swift */,
+				0D53B61A22FE78E8008021BB /* SCMoreTableViewCell.xib */,
 				0DD1987F22F513BA0078B320 /* SCMoreViewController.swift */,
 			);
 			path = More;
@@ -964,6 +970,7 @@
 				0DD1986D22F512440078B320 /* main.json in Resources */,
 				0DD198DF22F5409E0078B320 /* asho.json in Resources */,
 				0DF223C822F6B21600E12353 /* SCBreedFeatureController.xib in Resources */,
+				0D53B61C22FE78E8008021BB /* SCMoreTableViewCell.xib in Resources */,
 				0DD198EF22F5409E0078B320 /* esho.json in Resources */,
 				0DD198D922F5409E0078B320 /* acur.json in Resources */,
 				0DD1991E22F54A870078B320 /* SCBreedDisplayView.xib in Resources */,
@@ -1118,6 +1125,7 @@
 				0DD1987C22F513980078B320 /* SCFactsViewController.swift in Sources */,
 				0DD1986F22F512440078B320 /* SCMainViewController.swift in Sources */,
 				0DD1992022F54AE70078B320 /* SCBreedDisplayViewCell.swift in Sources */,
+				0D53B61D22FE78E8008021BB /* SCMoreTableViewCell.swift in Sources */,
 				0DD1985722F5107E0078B320 /* UITableViewCell+extension.swift in Sources */,
 				0DED77AC22FBA1C600A587A7 /* ExpandableTableView.swift in Sources */,
 				0D3815B622F930EC005ED942 /* SCFavouriteCollectionViewCell.swift in Sources */,
@@ -1291,7 +1299,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCatInfo/Info-Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1311,7 +1319,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCatInfo/Info-Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -34,11 +34,11 @@ class SCBreedListViewModel: SCBaseListViewModel{
         }
     }
     func loadFavouriteData(idList: [String])->[Bool]{
-        let breeds = CoreDataManager.shared.getAllFavouriteBreeds()
+        let breeds = CoreDataManager.shared.getAllBreeds()
         var favouriteStatus = [Bool]()
         if breeds.count == 0{
             for id in idList{
-                CoreDataManager.shared.addFavouriteBreedWith(name: id)
+                CoreDataManager.shared.addNewBreedWith(name: id)
                 favouriteStatus.append(false)
             }
             return favouriteStatus
@@ -47,6 +47,23 @@ class SCBreedListViewModel: SCBaseListViewModel{
             favouriteStatus.append(breed.isFavourite)
         }
         return favouriteStatus
+    }
+    
+    func updateViewModelsAfterRemoveAllFavourite(){
+        var idList = [String]()
+        for viewModel in viewModels ?? []{
+            guard let id = viewModel.breedId else{
+                continue
+            }
+            idList.append(id)
+        }
+        if idList.count != viewModels?.count{
+            return
+        }
+        let favouriteStatus = loadFavouriteData(idList: idList)
+        for (index,status) in favouriteStatus.enumerated(){
+            viewModels?[index].updateFavouriteStatus(newStatus: status)
+        }
     }
     
 }

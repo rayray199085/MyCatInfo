@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SCPuzzleViewController" customModule="MyCatInfo" customModuleProvider="target">
             <connections>
+                <outlet property="countLabel" destination="YYG-k0-wVp" id="sUg-eE-IQQ"/>
                 <outlet property="displayView" destination="UQV-gy-5wQ" id="vMc-pr-DEQ"/>
+                <outlet property="hintImageView" destination="7zL-Sv-VSV" id="dRv-SL-0ji"/>
                 <outlet property="view" destination="iN0-l3-epB" id="o7u-Vw-e2g"/>
             </connections>
         </placeholder>
@@ -39,12 +41,29 @@
                         <action selector="clickUploadButton:" destination="-1" eventType="touchUpInside" id="xtt-2U-ath"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zL-Sv-VSV">
+                    <rect key="frame" x="110" y="47" width="194" height="194"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="7zL-Sv-VSV" secondAttribute="height" multiplier="1:1" id="Ylg-MD-UZf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYG-k0-wVp">
+                    <rect key="frame" x="190" y="802" width="34" height="60"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                    <color key="textColor" red="0.92941176469999998" green="0.71764705880000002" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5Db-Mv-jmR" secondAttribute="bottom" id="3w1-8L-8LY"/>
+                <constraint firstItem="YYG-k0-wVp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="764-c6-zyq"/>
+                <constraint firstItem="7zL-Sv-VSV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="3" id="MmO-yJ-FoH"/>
+                <constraint firstItem="5Db-Mv-jmR" firstAttribute="centerY" secondItem="YYG-k0-wVp" secondAttribute="centerY" id="aDv-wl-31m"/>
+                <constraint firstItem="UQV-gy-5wQ" firstAttribute="top" secondItem="7zL-Sv-VSV" secondAttribute="bottom" constant="3" id="c2j-df-h5K"/>
                 <constraint firstItem="5Db-Mv-jmR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="iOH-e2-PhW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UQV-gy-5wQ" secondAttribute="trailing" constant="3" id="jnB-DW-4PQ"/>
+                <constraint firstItem="7zL-Sv-VSV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lYY-CH-S2b"/>
                 <constraint firstItem="UQV-gy-5wQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="paS-2N-Pe7"/>
                 <constraint firstItem="UQV-gy-5wQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="sk8-jL-3fH"/>
             </constraints>
