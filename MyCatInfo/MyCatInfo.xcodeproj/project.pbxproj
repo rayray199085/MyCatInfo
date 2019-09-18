@@ -28,7 +28,6 @@
 		0D53B61D22FE78E8008021BB /* SCMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B61B22FE78E8008021BB /* SCMoreTableViewCell.swift */; };
 		0DD197FF22F50B760078B320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD197FE22F50B760078B320 /* AppDelegate.swift */; };
 		0DD1980622F50B790078B320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1980522F50B790078B320 /* Assets.xcassets */; };
-		0DD1980922F50B790078B320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD1980722F50B790078B320 /* LaunchScreen.storyboard */; };
 		0DD1984722F5107E0078B320 /* MXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1981822F5107D0078B320 /* MXCornerRadius.m */; };
 		0DD1984822F5107E0078B320 /* UIApplication+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1981A22F5107D0078B320 /* UIApplication+extension.swift */; };
 		0DD1984922F5107E0078B320 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD1981B22F5107D0078B320 /* UIImageView+extension.swift */; };
@@ -196,7 +195,6 @@
 		0DD197FB22F50B760078B320 /* MyCatInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCatInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD197FE22F50B760078B320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD1980522F50B790078B320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0DD1980822F50B790078B320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DD1980A22F50B790078B320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD1981722F5107D0078B320 /* MXCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXCornerRadius.h; sourceTree = "<group>"; };
 		0DD1981822F5107D0078B320 /* MXCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXCornerRadius.m; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				0DD1980522F50B790078B320 /* Assets.xcassets */,
-				0DD1980722F50B790078B320 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -995,7 +992,6 @@
 				0DD1990522F5409E0078B320 /* tonk.json in Resources */,
 				0DDB808422F80F2500FD8AA1 /* SCBreedComparisonCell.xib in Resources */,
 				0DD198F222F5409E0078B320 /* lihu.json in Resources */,
-				0DD1980922F50B790078B320 /* LaunchScreen.storyboard in Resources */,
 				0DD1980622F50B790078B320 /* Assets.xcassets in Resources */,
 				0DD198E022F5409E0078B320 /* bsho.json in Resources */,
 				0DD1990B22F5409E0078B320 /* pixi.json in Resources */,
@@ -1155,17 +1151,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		0DD1980722F50B790078B320 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DD1980822F50B790078B320 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		0DD1980B22F50B790078B320 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1288,7 +1273,9 @@
 			baseConfigurationReference = 2FB01AB417205C3B82576C7F /* Pods-MyCatInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rui Cao (3CB5U428B8)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3CB5U428B8;
 				INFOPLIST_FILE = MyCatInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1297,9 +1284,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephencao.project.MyCatInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "CatInfo Fetch";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCatInfo/Info-Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1308,7 +1296,9 @@
 			baseConfigurationReference = D504DAFDE856905E858FC521 /* Pods-MyCatInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rui Cao (3CB5U428B8)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3CB5U428B8;
 				INFOPLIST_FILE = MyCatInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1317,9 +1307,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephencao.project.MyCatInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "CatInfo Fetch";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyCatInfo/Info-Bridge.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

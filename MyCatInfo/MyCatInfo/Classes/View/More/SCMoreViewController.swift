@@ -9,7 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "more_cell"
-private let appId = "1474927325"
+private let appId = "1476134148"
 private let emailAddress = "stephen.cao0805@outlook.com"
 
 class SCMoreViewController: UIViewController {
